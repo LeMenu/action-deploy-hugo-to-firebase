@@ -1,0 +1,12 @@
+name: Deploy Hugo to Firebase
+author: Romuald @ Le Menu <romuald@lemenu.tech>
+description: Builds the Hugo site and deploys to Firebase Hosting.
+inputs:
+    firebase-token:
+      description: Firebase token
+      required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.firebase-token }}
